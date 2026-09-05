@@ -197,19 +197,20 @@ el('fridge').innerHTML=SITE.fridge||'';
 
 /* ---------- age, hijri, kpis ---------- */
 var dob=new Date((SITE.dob||'2026-01-11')+'T00:00:00'), now=new Date();
-var days=Math.floor((now-dob)/864e5), wk=Math.floor(days/7);
+var PLAN_START=new Date('2026-09-05T00:00:00'); // Week 1 of WEEKLY-PLAN-YEAR1.md
+var days=Math.floor((now-dob)/864e5), wk=Math.max(1,Math.floor((now-PLAN_START)/864e5/7)+1);
 var m=(now.getFullYear()-dob.getFullYear())*12+(now.getMonth()-dob.getMonth());
 if(now.getDate()<dob.getDate()) m--;
 el('ageLine').innerHTML='Today is <b>'+now.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'})+'</b> — he is <b>'+m+' months</b> old ('+days+' days, week <b>'+(wk+1)+'</b> of the 52). Born 11 January 2026.';
 var focus = m<12?'0–12 months':(m<24?'12–24 months':(m<36?'2–3 years':(m<60?'3–5 years':'6–10 years')));
 var nb=new Date(now.getFullYear(),0,11); if(nb<now) nb.setFullYear(now.getFullYear()+1);
 var untilB=Math.floor((nb-now)/864e5);
-[['Age',(m)+' months'],['Week of plan','#'+(wk+1)],['Current section',focus],['Next birthday',untilB+' days'],['Screens','none yet'],['Qurʾān','10 min audible / day']]
+[['Age',(m)+' months'],['Week of plan','#'+wk],['Current section',focus],['Next birthday',untilB+' days'],['Screens','none yet'],['Qurʾān','10 min audible / day']]
  .forEach(function(p){el('kpis').appendChild(mk('div','kpi','<span>'+p[0]+'</span><b>'+p[1]+'</b>'))});
 try{
   var hj=new Intl.DateTimeFormat('en-u-ca-islamic-umalqura',{day:'numeric',month:'long',year:'numeric'}).format(now);
   var box=el('hijriNote'); box.classList.remove('hidden');
-  box.innerHTML='<b>Hijri today:</b> '+hj+'. &nbsp;Circle: Ramaḍān ≈ 8 Feb 2027 · ʿĪd al-Fiṭr ≈ 9–10 Mar 2027 · ʿArafah/ʿĪd al-Aḍḥā ≈ 15–16 May 2027 · 1 Muharram ≈ 6 Jun 2027 · ʿĀshūrāʾ ≈ 15 Jun 2027 · Mawlid ≈ 15 Aug 2027 — and follow your local moon sighting, all of these are ±1 day.';
+  box.innerHTML='<b>Hijri today:</b> '+hj+'. &nbsp;Circle: Ramaḍān ≈ 8 Feb 2027 · ʿĪd al-Fiṭr ≈ 9–10 Mar 2027 · ʿArafah/ʿĪd al-Aḍḥā ≈ 15–16 May 2027 · 1 Muharram ≈ 6 Jun 2027 · ʿĀshūrāʾ ≈ 15 Jun 2027 · Mawlid ≈ 15 Aug 2027 — and follow your local moon sighting, all of these are ±1 day. <i>(The Hijri date shown here is the Umm al-Qura calculation; your local sighting can be 1–2 days behind.)</i>';
 }catch(e){}
 
 /* ---------- prayer times (optional, silently skipped offline) ---------- */
