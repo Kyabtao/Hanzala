@@ -15,3 +15,6 @@ Open `printable/index.html` in a browser (or run `python3 -m http.server 8000 --
 **One rule that matters more than all of it:** 20 minutes on the floor with him, phone in another room, plus duʿāʾ for him by name before Fajr. Everything else is decoration.
 
 > رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا
+
+**Deployed site:** `docs/` → GitHub Pages. See **`DEPLOY.md`** (Option A = flip the Pages setting to `main` + `/docs`; Option B = copy `ops/pages-workflow.yml.example` to `.github/workflows/pages.yml` for auto-deploys).
+Live URL once enabled: **https://kyabtao.github.io/Hanzala/**
