@@ -11,7 +11,16 @@ Two options. **Option A takes 30 seconds; Option B is automatic forever.**
 That's all. `docs/` already contains a finished static site — no build, no dependencies, no `node_modules`.
 
 ## Option B — auto-deploy on every push (Actions)
-`.github/workflows/pages.yml` is included. It runs `python3 build_docs.py` and publishes `docs/`.
+The workflow is written to **`ops/pages-workflow.yml.example`** — copy it yourself (agents are not permitted to add files under `.github/`):
+
+```bash
+mkdir -p .github/workflows
+cp ops/pages-workflow.yml.example .github/workflows/pages.yml
+git add .github/workflows/pages.yml
+git commit -m "ci: auto-deploy docs/ to Pages"
+git push origin main
+```
+Then set **Settings → Pages → Build and deployment → Source: `GitHub Actions`**. It re-runs `python3 build_docs.py` on every push to `main`, so the published site can never drift from the `.md` sources. Use Option A **or** Option B, not both.
 After pushing it once, set **Settings → Pages → Build and deployment → Source: `GitHub Actions`**.
 (If the workflow fails with a permissions error: Settings → Actions → General → Workflow permissions → **Read and write**.)
 
