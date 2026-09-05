@@ -1,0 +1,33 @@
+# Copy to .github/workflows/pages.yml  (the repo owner must do this; agents may not add workflow files)
+#   mkdir -p .github/workflows && cp ops/pages-workflow.yml.example .github/workflows/pages.yml
+#   git add .github/workflows/pages.yml && git commit -m "ci: auto-deploy docs/ to Pages" && git push origin main
+# Then: Settings → Pages → Build and deployment → Source: GitHub Actions
+name: Deploy site to GitHub Pages
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Rebuild docs/ from the .md + cards.json sources
+        run: python3 build_docs.py
+      - uses: actions/configure-pages@v4
+      - uses: actions/upload-pages-artifact@v3
+        with: {path: docs}
+      - id: deployment
+        uses: actions/deploy-pages@v4
