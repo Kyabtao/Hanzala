@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ḥanzalā — Growth · Deen · Ḥifẓ Tracker (print A4)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Nastaliq+Urdu&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Naskh+Arabic:wght@400;600&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c2b26; --line:#d8e2dc; --soft:#f4f8f5; --accent:#16694a; --gold:#a3781f;
+    --ar:'Amiri','Noto Naskh Arabic','Scheherazade New',serif;
+    --ur:'Noto Nastaliq Urdu','Jameel Noori Nastaleeq','Nafees Nastaleeq',serif;
+    --hi:'Noto Sans Devanagari','Nirmala UI',sans-serif;
+    --en:'Inter',system-ui,'Segoe UI',sans-serif;
+  }
+  @page{ size:A4 portrait; margin:11mm; }
+  *{box-sizing:border-box}
+  html{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+  body{margin:0; font-family:var(--en); color:var(--ink); background:#eef2ef; line-height:1.45; font-size:13px}
+  .sheet{max-width:210mm; margin:0 auto; background:#fff; padding:12mm 11mm 16mm}
+  h1{font-size:24px; margin:0 0 2px; letter-spacing:-.4px}
+  h2{font-size:15px; margin:26px 0 8px; padding:6px 10px; background:var(--accent); color:#fff; border-radius:4px; page-break-after:avoid}
+  h3{font-size:13px; margin:16px 0 6px; color:var(--accent); page-break-after:avoid}
+  .sub{color:#4a5b54; margin:0 0 4px; font-size:12px}
+  .bism{font-family:var(--ar); font-size:20px; text-align:center; color:var(--gold); margin:2px 0 12px}
+  .meta{display:flex; gap:10px; flex-wrap:wrap; margin:10px 0 0}
+  .meta div{border:1px solid var(--line); border-radius:4px; padding:5px 9px; min-width:200px; flex:1}
+  .meta span{display:block; font-size:10px; text-transform:uppercase; letter-spacing:.6px; color:#7d8a84}
+  .fill{display:inline-block; border-bottom:1px solid #9aa8a2; min-width:110px; height:15px}
+  table{width:100%; border-collapse:collapse; margin:4px 0 6px; font-size:12px}
+  th,td{border:1px solid var(--line); padding:5px 7px; vertical-align:top; text-align:left}
+  th{background:var(--soft); font-size:10.5px; text-transform:uppercase; letter-spacing:.5px; color:#546b61}
+  td.age{white-space:nowrap; font-weight:800; color:var(--accent); width:74px}
+  td.yr{white-space:nowrap; font-weight:600; width:58px}
+  tr{page-break-inside:avoid}
+  .ar{font-family:var(--ar); font-size:19px; line-height:2}
+  .ur{font-family:var(--ur); font-size:15px; line-height:2.3}
+  .hi{font-family:var(--hi); font-size:13px}
+  .box{width:15px; height:15px; border:1.6px solid #93a49c; border-radius:3px; display:inline-block; vertical-align:-3px; cursor:pointer; background:#fff}
+  .box.on{background:var(--accent); border-color:var(--accent); position:relative}
+  .box.on::after{content:"✓"; color:#fff; font-size:11px; font-weight:800; position:absolute; inset:0; text-align:center; line-height:13px}
+  .cell{white-space:nowrap}
+  .prog{position:sticky; top:0; z-index:9; background:#fff; border-bottom:2px solid var(--accent); padding:8px 0 10px}
+  .bar{height:9px; background:var(--soft); border-radius:9px; overflow:hidden}
+  .bar i{display:block; height:100%; background:linear-gradient(90deg,var(--accent),#2fa06f); width:0%}
+  .barlab{font-size:11px; color:#5a6b64; margin-top:4px}
+  .warn{border-left:4px solid var(--gold); background:#fdf8ec; padding:8px 11px; margin:8px 0; font-size:12px; border-radius:0 4px 4px 0}
+  .note{background:var(--soft); border:1px solid var(--line); border-radius:4px; padding:8px 11px; font-size:12px; margin:8px 0}
+  .duain{background:#fff; border:1px solid var(--line); border-radius:4px; padding:9px 11px; margin:6px 0}
+  .duain b{display:block; font-size:12px}
+  .row{display:flex; gap:12px; flex-wrap:wrap}
+  .row>div{flex:1 1 240px}
+  ul{margin:4px 0 4px 18px; padding:0}
+  li{margin:2px 0}
+  .no-print{position:fixed; right:16px; bottom:16px; display:flex; gap:8px; z-index:50}
+  button{font:inherit; font-weight:600; background:var(--accent); color:#fff; border:0; border-radius:20px; padding:9px 15px; cursor:pointer; box-shadow:0 3px 12px rgba(0,0,0,.18)}
+  button.ghost{background:#fff; color:var(--accent); border:1px solid var(--accent)}
+  .grid td,.grid th{text-align:center; padding:3px 2px}
+  .grid th:first-child,.grid td:first-child{text-align:left; font-size:11px}
+  .sign{border:1px solid var(--line); border-radius:4px; padding:10px; min-height:64px; font-size:11px; color:#7d8a84}
+  @media print{
+    body{background:#fff; font-size:11px}
+    .sheet{max-width:none; padding:0}
+    .no-print{display:none!important}
+    .prog{position:static}
+    h2{background:#fff; color:var(--accent); border:1px solid var(--accent); border-radius:0; padding:4px 8px; -webkit-print-color-adjust:exact}
+    th{background:#fff}
+    .warn,.note{background:#fff}
+    .box{border-color:#333}
+    .box.on{background:#1c2b26; border-color:#1c2b26}
+  }
+</style>
+</head>
+<body>
+<div class="prog">
+  <div class="bar"><i id="fill"></i></div>
+  <div class="barlab"><b id="pctxt">0 / 0</b> boxes ticked · ticks are saved in this browser automatically · print with <b>Print / Save as PDF</b> (A4 portrait)</div>
+</div>
+
+<div class="sheet">
+  <h1>Ḥanzalā — Growth, Dīn &amp; Ḥifẓ Tracker</h1>
+  <p class="sub">Born 11 January 2026 · tracker started <b>5 September 2026</b> (age 7 months) · use alongside <span style="font-family:var(--en)">WEEKLY-PLAN-YEAR1.md</span> and <span style="font-family:var(--en)">TOY-AND-STUDY-PLAN.md</span></p>
+  <div class="bism">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+  <div class="meta">
+    <div><span>Child</span> Ḥanzalā · <span style="display:inline;font-size:12px;font-family:var(--ur)">حنظلة</span></div>
+    <div><span>Mother / Father</span><i class="fill"></i> / <i class="fill"></i></div>
+    <div><span>Blood group · birth weight</span><i class="fill" style="min-width:56px"></i> · <i class="fill" style="min-width:70px"></i></div>
+    <div><span>Masjid / teacher</span><i class="fill"></i></div>
+  </div>
+  <div class="note"><b>How to use:</b> look at this page once a month, on the 5th. Tick what he can do <i>reliably</i> (3 good days = yes), write the date. <b>Never</b> tick to feel good, and never teach to the tick — a milestone that comes late but with love beats one forced early. Ages overlap: a 14-month-old may still legitimately show 10-month ticks.</div>
+
+  <h2>1 · Developmental milestones (WHO/AAP-style) — one row per age band</h2>
+  <table id="milestones"></table>
+  <div class="warn"><b>Show the doctor this month if, at 18 months:</b> no words at all, no pointing with the index finger, no single-step understanding, loss of a skill he had, no eye contact during feeding, or he doesn't walk without falling repeatedly. Also: any regression at any age = an appointment, not a wait. Speech &amp; motor help works best at 18–30 months. <b>Do not</b> use "he'll grow out of it" and do not blame yourself.</div>
+
+  <h2>2 · Dīn &amp; adab milestones — the gentle chart (never test him, only notice)</h2>
+  <table id="deen"></table>
+
+  <h2>3 · Ḥifẓ &amp; Qurʾān progress — Juz ʿAmma + the essentials</h2>
+  <p class="sub">Method for a small child: <b>5 āyāt/day max</b>, you recite → he repeats 3× → next day revise yesterday's first. <b>Stop</b> the moment he cries or refuses for 10 min straight; restart in 2 weeks. Never Qurʾān as punishment, never after a bad deed ("you sinned, now read"), never during sleep time. Reward = hug + date + a stamp here, not money.</p>
+  <table id="hifz"></table>
+  <div class="row">
+    <div><h3>Murājaʿah rota (revision)</h3>
+      <table><tr><th>Day</th><th>Revise</th><th>Done</th></tr>
+      <tr><td>Sat</td><td>This week's new 5 āyāt</td><td class="cell"><span class="box" data-k="rev1"></span></td></tr>
+      <tr><td>Sun</td><td>Last week's set</td><td class="cell"><span class="box" data-k="rev2"></span></td></tr>
+      <tr><td>Mon</td><td>2 weeks back</td><td class="cell"><span class="box" data-k="rev3"></span></td></tr>
+      <tr><td>Tue</td><td>Juz ʿAmma from al-Naba → (full run)</td><td class="cell"><span class="box" data-k="rev4"></span></td></tr>
+      <tr><td>Wed</td><td>5 shortest sūrahs, aloud together</td><td class="cell"><span class="box" data-k="rev5"></span></td></tr>
+      <tr><td>Thu</td><td>al-Fātiḥah + al-Ikhlāṣ slowly, with meaning</td><td class="cell"><span class="box" data-k="rev6"></span></td></tr>
+      <tr><td>Fri</td><td>Sūrah al-Kahf 1–5 with Abū; no revision</td><td class="cell"><span class="box" data-k="rev7"></span></td></tr>
+      </table></div>
+    <div><h3>Duʿāʾ &amp; aḥādīth he should say (target ages)</h3>
+      <table id="duain"></table></div>
+  </div>
+
+  <h2>4 · The 14-day routine grid (print 2 per month, stick on the wall)</h2>
+  <p class="sub">One box = one day. Tick only if the whole family actually did it. A 60%-full grid for 10 months is a successful childhood; a 100% grid built on shouting is not.</p>
+  <table class="grid" id="routine"></table>
+
+  <h2>5 · Every birthday, once — record page</h2>
+  <table>
+    <tr><th>Age</th><th>Date · height · weight</th><th>Words/sūrahs he knew</th><th>Best gift that worked</th><th>Gift that failed</th><th>One duʿāʾ for the next year</th></tr>
+    <tr><td class="yr">0 y</td><td>11 Jan 27 · <i class="fill"></i> · <span class="fill" contenteditable="true">&nbsp;</span></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+    <tr><td class="yr">1 y</td><td>11 Jan 28 · <i class="fill"></i> · <span class="fill" contenteditable="true">&nbsp;</span></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+    <tr><td class="yr">2 y</td><td>11 Jan 29 · <i class="fill"></i> · <span class="fill" contenteditable="true">&nbsp;</span></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+    <tr><td class="yr">3 y</td><td>11 Jan 30 · <i class="fill"></i> · <span class="fill" contenteditable="true">&nbsp;</span></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+    <tr><td class="yr">4 y</td><td>11 Jan 31 · <i class="fill"></i> · <span class="fill" contenteditable="true">&nbsp;</span></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+    <tr><td class="yr">5 y</td><td>11 Jan 32 · <i class="fill"></i> · <span class="fill" contenteditable="true">&nbsp;</span></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+    <tr><td class="yr">6 y</td><td>11 Jan 33 · <i class="fill"></i> · <span class="fill" contenteditable="true">&nbsp;</span></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+    <tr><td class="yr">7 y</td><td>11 Jan 34 · <i class="fill"></i> · <i class="fill"></i> <span class="hi">(ṣalāh command begins)</span></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+    <tr><td class="yr">8 y</td><td>11 Jan 35 · <i class="fill"></i> · <span class="fill" contenteditable="true">&nbsp;</span></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+    <tr><td class="yr">9 y</td><td>11 Jan 36 · <i class="fill"></i> · <span class="fill" contenteditable="true">&nbsp;</span></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+    <tr><td class="yr">10 y</td><td>11 Jan 37 · <i class="fill"></i> · <span class="fill" contenteditable="true">&nbsp;</span></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+  </table>
+
+  <h2>6 · Vaccination, health &amp; weight log (photocopy the card here, add the Hijri date)</h2>
+  <table>
+    <tr><th>Date</th><th>Age</th><th>Vaccine / illness / visit</th><th>Doctor's advice</th><th>Next due</th></tr>
+    <tr><td>11 Jan 27</td><td>12 m</td><td>MMR-1 / varicella / hep-A-1 (per your national schedule)</td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+    <tr><td>—</td><td>15 m</td><td>Booster / deworming (ask your pediatrician)</td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+    <tr><td>11 Jan 28</td><td>2 y</td><td>Weight, height, head circ., iron check, first dental</td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+    <tr><td>11 Jan 29</td><td>3 y</td><td>Eyes (squint/amblyopia), ears, speech screen</td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+    <tr><td>11 Jan 30</td><td>4 y</td><td>Full growth chart, adenoids/snoring check</td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+    <tr><td>11 Jan 31</td><td>5 y</td><td>Eyesight test before Qurʾān/letter work (very important)</td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+  </table>
+  <div class="note"><b>Ruqyah &amp; medicine, together:</b> for fever, cough, fright — give medicine from a doctor <i>and</i> recite the Muʿawwidhatān + al-Fātiḥah over him and blow lightly. The Prophet ﷺ took medicine and made duʿāʾ; treat the body and the heart in the same hand. No honey-water-exorcism, no "hakeem" who sells thread, no stopping vaccines.</div>
+
+  <div class="row">
+    <div class="sign">Mother's observation this month (speech, sleep, temper, tempering of the heart):</div>
+    <div class="sign">Father's observation + duʿāʾ written for him this month:</div>
+  </div>
+
+  <p class="sub" style="margin-top:14px">رَبِّ اشْرَحْ لِي صَدْرِي وَيَسِّرْ لِي أَمْرِي · <span class="hi">रबबिश्‍रह लि सद्रि</span> — and: <i>Rabbi zidnī ʿilmā</i>. <b>Āmīn.</b></p>
+</div>
+
+<div class="no-print">
+  <button onclick="window.print()">🖨 Print / Save as PDF</button>
+  <button class="ghost" onclick="clearAll()">Clear my ticks</button>
+</div>
+
+<script>
+/* ---------- data ---------- */
+const MS = [
+ ["7 m","sits without support ~1 min","rolls both ways","laughs aloud, squeals","turns head to his own name","babbles ba-da-ma","reaches for a toy","sits for a feed on your lap without props","still not sitting = see doctor this month"],
+ ["8 m","crawls / drags on belly","transfers object hand to hand","picks a raisin (pincer begins)","plays peek-a-boo, laughs at it","understands \"no-no\" (nahi)","bounces when held standing","responds to a voice from behind"],
+ ["9 m","sits firmly, both hands free","pulls himself to stand","looks for a thing you hid","babbles with rhythm (jargon)","feeds himself a biscuit","strangers' wariness appears (normal)"],
+ ["10 m","crawls fast, around furniture","points with index finger","says \"mama/dada\" for the right person","waves bye-bye on request","puts a cube in a cup, takes it out","understands a simple order + gesture","babbles a long chain (jargon)","no pointing at 12 m = tell the doctor"],
+ ["11 m","cruises standing sideways","drinks from an open cup (spills less)","thumbs food to mouth","searches where an object fell","copies your action (clap, phone to ear)","enjoys dropping things for you to fetch"],
+ ["12 m","stands alone 2 s; may take 1 step","first real word (Allāh/mama/dada counts!)","uses an object properly (brush to hair)","points at what he wants","finds 2 hidden toys in a row","walks holding one hand","follows 1-step rule without gesture","no word + no walking at 15 m = review"],
+ ["15 m","walks alone, walks backwards a step","3–10 words","kicks a ball","stacks 2 cubes","takes off socks/shoes","drinks from cup alone","helps you to a task (carries the napkin)","shows you a thing he found (shared attention)"],
+ ["18 m","runs without falling often","~20 words; 2 words together soon","follows a 1-step order","points to 1 body part when asked","pretend-play with a doll/cup","stacks 4 cubes","uses a spoon (messy is fine)","no words / no pointing / loses skills → doctor NOW"],
+ ["24 m","2-word phrases (\"pānī do\")","~50+ words","jumps with both feet","parallel play with other kids","removes clothes, points to wet pants","copies a 2-block tower","sorts 2 shapes","still no phrase = assessment now"],
+ ["30 m","sentences of 3 words","goes up stairs holding rail","turns 2–3 book pages","names a picture you point at","helps dress self","plays alongside then begins turn-taking","bathroom signals by day (night later)"],
+ ["36 m","3–4 word sentences, strangers understand most","jumps with both feet","copies a circle","asks \"what's this?\" non-stop","rides a tricycle","pours water with little spill","tells you what he ate (memory talk)","toilet training complete by day"],
+ ["48 m","tells a short story in order","hops on one foot","copies a cross/plus","counts 4 objects correctly","dresses self (no buttons/belts)","asks \"why\" — answer briefly, that's the deen door","draws a person with 3 parts"],
+ ["60 m","counts to 10, knows some letters","hops and balances 5 s","tells a 5-part story","takes turns and loses without melt-down","ties knots in string","asks for words' spelling interest","writes his own name's first letter","ready for Qurʾān reading lessons"],
+];
+const DEEN = [
+ ["7–12 m","calms or pauses when Qurʾān is recited","turns head at the sound of the adhān","lets you raise his hand for duʿāʾ (āmīn game begins)","likes the rhythm of ḥamd/nasheed without instruments"],
+ ["12–18 m","says \"Allāh\" (any approximation)","says āmīn after your duʿāʾ","puts forehead down when he sees your sujud","says Bismillāh when you start, before food","kisses/shows love to the Ummī and Abū (no hitting)"],
+ ["18–24 m","returns salām \"wa ʿalaykum\"","says alḥamdulillāh after eating, on his own tongue","wants to wear a thobe/kurta for Jumuʿah, wants his own misbāḥah","knows: Kaʿbah is in Makkah, Allāh made everything","gentle with animals when reminded"],
+ ["2.5 y","recites al-Fātiḥah with you, mostly correct","says duʿāʾ before sleep with reminders","knows the adhān means \"come to prayer\"","asks \"who made me?\"","no lying even when afraid (praise this loudly when it happens)"],
+ ["3 y","stands for the positions of ṣalāh with you","knows 5 ṣalāh names and the 2 ʿīds","memorises 10–15 short sūrahs","says \"SubḥānAllāh\" at sky/moon/rain naturally","shares his toys without being told"],
+ ["4–5 y","reads ḥurūf al-hijāʾ, starts a Qāʿidah","fasts half a day, wants to try","asks about Allāh's mercy &amp; Jannah, answer with hope","knows the Prophet ﷺ's name, that he is the last messenger","makes his own duʿāʾ in his own words, no script"],
+ ["6–7 y","prays with the family, mostly correct","knows the 6 articles of īmān in his own words","has a Qurʾān teacher/ijāzah line, keeps wuḍūʾ himself","gives his own ṣadaqah; chooses a book over a screen sometimes","tells a story of a prophet to a younger child"],
+ ["7 y (11 Jan 33)","begins the command of ṣalāh — gently, 5×/day","keeps a personal duʿāʾ list; prays for someone else too","knows the adhkār of morning &amp; evening from memory","learns the fiqh of ṭahārah practically (istinjāʾ, wuḍūʾ, masḥ on khuff)","is trusted with money &amp; the ṣadaqah envelope"],
+ ["8–9 y","prays on time without being told, sometimes","finishes Juz ʿAmma, begins al-Baqarah","has 2 good friends whose parents you know","answers: \"why do Muslims pray?\" in 3 sentences","learns a skill sunnah-style: swimming/archery/cycling &amp; one craft"],
+ ["10 y","ṣalāh consistent, fasting the full Ramadān when able","reads meaning of what he recites; asks about tafsīr","knows what ḥalāl/ḥarām means for his own pocket-money","keeps his room, his bag, his own adhān alarm","can teach a younger child 1 sūrah — teaching seals learning"],
+];
+const HIFZ = [
+ ["al-Fātiḥah","الفاتحة",7,"1–2 y","the mother of the Book; must be perfect before anything else — ʿibādah depends on it"],
+ ["al-Ikhlāṣ","الإخلاص",4,"7–9 m (heard) → 2 y (said)","ṣalāh of tawḥīd; third of the Qurʾān in weight"],
+ ["al-Falaq","الفلق",5,"7 m (heard)","protection — recite over him for sleep, all 52 weeks"],
+ ["an-Nās","الناس",6,"7 m (heard)","protection; teach that we seek refuge from waswās"],
+ ["al-Kawthar","الكوثر",3,"12 m","the river in Jannah; gratitude: \"fa-ṣalli li-rabbika wa-nḥar\""],
+ ["al-ʿAṣr","العصر",3,"18 m","time, faith, good deeds, patience — the whole dīn in 3 lines"],
+ ["an-Naṣr","النصر",3,"2 y","Allāh's help comes; no pride when you win"],
+ ["al-Māʿūn","الماعون",7,"2 y","the one who refuses small kindness; drives the ṣadaqah habit"],
+ ["al-Qāriʿah","القارعة",11,"2.5 y","the scales; weigh good deeds out loud with him at home"],
+ ["al-ʿĀdiyāt","العاديات",11,"2.5 y","gratefulness of the heart; \"man kāna yuḥibbu an yashkura…\""],
+ ["az-Zalzalah","الزلزلة",8,"3 y","the earth speaks; atom's weight of good and evil"],
+ ["al-ʿAlaq","العلق",19,"3 y","iqrāʾ — the first word was READ. His study begins here"],
+ ["al-Qadr","القدر",5,"3 y","the night better than 1000 months; Ramadān anchor"],
+ ["aḍ-Ḍuḥā","الضحى",11,"3 y","for the sad heart: \"mā waḍḍakā rabbuka wa mā qalā\" — recite to him all his life"],
+ ["ash-Sharḥ","الشرح",8,"3 y","with hardship is ease — say it in every difficulty in the house"],
+ ["at-Tīn","التين",8,"3.5 y","Allāh made man in the best form; body = amānah"],
+ ["al-Fīl","الفيل",5,"3.5 y","the year of his ﷺ birth; Mawlid anchor (12 Rabīʿ I)"],
+ ["Quraysh","قريش",4,"3.5 y","security &amp; food: \"fa-yaʿbudū rabbā hādhā l-bayt\""],
+ ["al-Humazah","الهمزة",9,"4 y","guard the tongue: no backbiting, no screen-comment culture"],
+ ["al-Fīl/Al-Lahab","المسد",5,"4 y","no one is saved by family alone — only īmān &amp; deeds"],
+ ["Sūrah al-Mulk","الملك",30,"5 y, every night","the protector from the grave; sleep routine for life"],
+ ["Sūrah Yāsīn","يس",83,"7–9 y, with meaning","the heart of the Qurʾān; for the dying &amp; for your own end"],
+ ["Sūrah as-Sajdah","السجدة",30,"with al-Mulk at night","sunnah pair before sleep (Fiqh of Sunnah)"],
+ ["Sūrah al-Kahf","الكهف",110,"from 7 y, every Friday","the 4 trials: wealth, knowledge, power, fitnah — his whole adulthood in a story"],
+ ["Sūrah al-Baqarah","البقرة",286,"5–12 y, plan 7 yrs","protection of the home; play/recite in the house every week"],
+ ["Āyat al-Kursī","البقرة 255",1,"3 y","before sleep — the sunnah for a protected night"],
+ ["Last 2 āyāt of al-Baqarah","البقرة 285–286",2,"3.5 y","\"whoever recites them at night, they suffice him\""],
+];
+const DUAIN = [
+ ["Bismillāh (before food/every start)","بِسْمِ اللّٰهِ","bismillāh","18 m","before food, before play, before the car"],
+ ["After food","اَلْحَمْدُ لِلّٰهِ الَّذِيْ أَطْعَمَنَا وَسَقَانَا","alḥamdulillāhi lladhī aṭʿamanā wa saqānā","2 y","he must hear it 500 times before he says it once"],
+ ["Sneeze / reply","اَلْحَمْدُ لِلّٰهِ · يَرْحَمُكَ اللّٰهُ","alḥamdulillāh → yarḥamuka Llāh","2 y","practise on everyone in the house; he will correct you by 3"],
+ ["Sleep","اِسْمِكَ اللّٰهُمَّ أَمُوْتُ وَأَحْيَا","bismik Allāhumma amūtu wa aḥyā","12 m","with 3 Qul, hand on his chest"],
+ ["Wake","اَلْحَمْدُ لِلّٰهِ الَّذِيْ أَحْيَانَا بَعْدَ مَا أَمَاتَنَا","alḥamdulillāhi lladhī aḥyānā baʿda mā amātanā","2.5 y","say it in the room so it's the first sound of his day"],
+ ["Entering the house","بِسْمِ اللّٰهِ وَلَجْنَا…","bismillāhi walajnā wa ʿalā Llāhi tawakkalnā","3 y","say it aloud at the door, every single entry, for years"],
+ ["Leaving the house","بِسْمِ اللّٰهِ تَوَكَّلْتُ عَلَى اللّٰهِ","bismillāhi tawakkaltu ʿalā Llāh","3.5 y","in the lift, in the car, at the masjid gate"],
+ ["For protection of the child","أُعِيذُكَا بِكَلِمَاتِ اللّٰهِ التَّامَّاتِ…","Uʿīdhukā bi-kalimāti Llāhi t-tāmmāti min kulli shayṭānin wa hāmmatin wa min kulli ʿaynin lāmmah","<b>7 m — TODAY</b>","the duʿāʾ of the Prophet ﷺ for al-Ḥasan &amp; al-Ḥusayn; morning + evening, on his head"],
+ ["For knowledge","اَللّٰهُمَّ انْفَعْنِي بِمَا عَلَّمْتَنِي","Allāhumma infaʿnī bi-mā ʿallamtanī","4 y","before every lesson, before his madrasah bag"],
+ ["The one that changes everything","لَا إِلٰهَ إِلَّا اللّٰهُ وَحْدَهُ لَا شَرِيْكَ لَهُ…","lā ilāha illallāhu waḥdahu lā sharīka lah, lahu l-mulku wa lahu l-ḥamd, wa huwa ʿalā kulli shayʾin qadīr","2 y, 10× morning/evening","the kalimah of his wall; make the house echo with it"],
+ ["Hadīth 1 — intentions","إِنَّمَا الْأَعْمَالُ بِالنِّيَّاتِ","innama l-aʿmālu bi-n-niyyāt","5 y","teach: we give ṣadaqah for Allāh, not for praise"],
+ ["Hadīth 2 — cleanliness","الطُّهُورُ شَطْرُ الْإِيمَانِ","aṭ-ṭuhūru shaṭru l-īmān","3.5 y","with the mini broom and his own wuḍūʾ help"],
+ ["Hadīth 3 — no anger","لَا تَغْضَبْ","lā tagḍab","4 y","when he shouts: hold his hands, breathe, then talk. Not at 5 min apart"],
+ ["Hadīth 4 — smile is ṣadaqah","تَبَسُّمُكَ فِي وَجْهِ أَخِيكَ صَدَقَةٌ","tabassumuka fī wajhi akhīka ṣadaqah","3.5 y","greet him at the door with a smile; he copies for life"],
+ ["Hadīth 5 — mother, then father","أُمُّكَ ثُمَّ أُمُّكَ ثُمَّ أُمُّكَ ثُمَّ أَبُوكَ","ummuk, thummā ummuk, thummā ummuk, thummā abūk","3 y","kiss Ummī's hand in front of him daily; whatever you want him to be, do first"],
+ ["Hadīth 6 — no harm","لَا ضَرَرَ وَلَا ضِرَارَ","lā ḍarara wa lā ḍirār","4 y","this is why we don't have toy guns, sharp toys, or cruel words"],
+ ["Hadīth 7 — best of you","خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ","khayrukum man taʿallama l-Qurʾāna wa ʿallamahu","4 y","his reward for teaching a sibling: a date"],
+ ["Hadīth 8 — good character","إِنَّ مِنْ خِيَارِكُمْ أَحْسَنَكُمْ أَخْلَاقًا","inna min khiyārikum aḥsanakum akhlāqā","5 y","say: \"Allāh loves the one who shares his biscuits\""],
+];
+
+/* ---------- render ---------- */
+const tickCols = (pre,n)=>{let h='';for(let i=0;i<n;i++)h+=`<td class="cell"><span class="box" data-k="${pre}${i}"></span></td>`;return h;};
+let h='<tr><th>Age</th><th>Look for this</th><th>✓</th><th>Date</th><th>Note</th></tr>';
+MS.forEach(([age,...rest],ri)=>{
+  const items=rest.filter((x,i)=>i<7); const warn=rest[7];
+  h+=`<tr><td class="age">${age}</td><td><ul>${items.map((t,ci)=>`<li><span class="box" data-k="m${ri}_${ci}"></span> ${t}</li>`).join('')}</ul>${warn?`<span style="font-size:11px;color:var(--gold)">⚑ ${warn}</span>`:''}</td><td class="cell"><b class="mcount" data-row="${ri}">0/${items.length}</b></td><td><span class="fill" contenteditable="true">&nbsp;</span></td><td contenteditable="true"></td></tr>`;
+});
+document.getElementById('milestones').innerHTML=h;
+
+h='<tr><th>Age</th><th>Sign it is there</th><th>✓</th><th>Seen on</th></tr>';
+DEEN.forEach(([age,...rest],ri)=>{
+  h+=`<tr><td class="age">${age}</td><td><ul>${rest.map((t,ci)=>`<li><span class="box" data-k="d${ri}_${ci}"></span> ${t}</li>`).join('')}</ul></td><td class="cell"><b class="dcount" data-row="${ri}">0/${rest.length}</b></td><td>${tickCols('dd'+ri+'_',2)}<span class="fill" contenteditable="true">&nbsp;</span></td></tr>`;
+});
+document.getElementById('deen').innerHTML=h;
+
+h='<tr><th>Sūrah / duʿāʾ</th><th>Ar.</th><th>Āyāt</th><th>Start</th><th>Memorised</th><th>On own (no help)</th><th>Tested by teacher</th><th>Date</th><th>Note</th></tr>';
+HIFZ.forEach(([name,ar,a,start,why],ri)=>{
+  h+=`<tr><td><b>${name}</b><br><span style="font-size:11px;color:#5a6b64">${why}</span></td><td class="ar">${ar}</td><td>${a}</td><td class="yr">${start}</td>
+  <td class="cell"><span class="box" data-k="h${ri}_m"></span></td><td class="cell"><span class="box" data-k="h${ri}_o"></span></td><td class="cell"><span class="box" data-k="h${ri}_t"></span></td>
+  <td><i class="fill" style="min-width:60px"></i></td><td contenteditable="true"></td></tr>`;
+});
+document.getElementById('hifz').innerHTML=h;
+
+h='<tr><th>Item</th><th>Arabic / Urdu</th><th>Translit.</th><th>Age</th><th>Says it</th></tr>';
+DUAIN.forEach(([en,ar,tr,age,how],ri)=>{
+  h+=`<tr><td><b>${en}</b><br><span style="font-size:11px;color:#5a6b64">${how}</span></td><td><div class="ar">${ar}</div></td><td style="font-size:11px">${tr}</td><td class="yr">${age}</td><td class="cell"><span class="box" data-k="u${ri}"></span></td></tr>`;
+});
+document.getElementById('duain').innerHTML=h;
+
+const RROWS=[["Bismillāh at every meal"],["Qurʾān audible 10 min"],["ṣalāh with him in the room"],["morning &amp; evening adhkār + duʿāʾ on his head"],["20 min on the floor, phone away"],["30 min outside / nature + SubḥānAllāh"],["book read to him 10 min"],["no screen today (all of us)"]];
+h='<tr><th>Habit</th>'+Array.from({length:14},(_,i)=>`<th>D${i+1}</th>`).join('')+'</tr>';
+RROWS.forEach((r,ri)=>{h+=`<tr><td><span class="box" data-k="r${ri}z"></span> ${r[0]}</td>`;
+  for(let i=0;i<14;i++)h+=`<td class="cell"><span class="box" data-k="r${ri}_${i}"></span></td>`;h+='</tr>';});
+document.getElementById('routine').innerHTML=h;
+
+/* ---------- ticks + persistence ---------- */
+const KEY='hanzala-tracker-v1';
+let state={};
+try{state=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
+function paint(){
+  document.querySelectorAll('.box').forEach(b=>b.classList.toggle('on', !!state[b.dataset.k]));
+  update();
+}
+function update(){
+  const boxes=[...document.querySelectorAll('.box')];
+  const done=boxes.filter(b=>state[b.dataset.k]).length;
+  document.getElementById('fill').style.width=(100*done/boxes.length).toFixed(1)+'%';
+  document.getElementById('pctxt').textContent=done+' / '+boxes.length;
+  document.querySelectorAll('.mcount').forEach(el=>{const ri=el.dataset.row;const n=[...document.querySelectorAll(`[data-k^="m${ri}_"]`)].filter(b=>state[b.dataset.k]).length;el.textContent=n+'/'+el.textContent.split('/')[1];});
+  document.querySelectorAll('.dcount').forEach(el=>{const ri=el.dataset.row;const n=[...document.querySelectorAll(`[data-k^="d${ri}_"]`)].filter(b=>state[b.dataset.k]).length;el.textContent=n+'/'+el.textContent.split('/')[1];});
+}
+document.addEventListener('click',e=>{
+  const b=e.target.closest('.box'); if(!b)return;
+  state[b.dataset.k]=!state[b.dataset.k];
+  if(!state[b.dataset.k])delete state[b.dataset.k];
+  localStorage.setItem(KEY,JSON.stringify(state)); b.classList.toggle('on',!!state[b.dataset.k]); update();
+});
+document.addEventListener('input',e=>{
+  const el=e.target.closest('[contenteditable]'); if(!el)return;
+  const i=[...document.querySelectorAll('[contenteditable]')].indexOf(el);
+  state['ce'+i]=el.innerHTML; localStorage.setItem(KEY,JSON.stringify(state));
+});
+function clearAll(){ if(confirm('Clear all ticks and notes in this browser?')){localStorage.removeItem(KEY);state={};paint();document.querySelectorAll('[contenteditable]').forEach(e=>e.innerHTML='');} }
+window.addEventListener('load',()=>{
+  document.querySelectorAll('[contenteditable]').forEach((el,i)=>{if(state['ce'+i])el.innerHTML=state['ce'+i];});
+  paint();
+});
+paint();
+</script>
+</body>
+</html>

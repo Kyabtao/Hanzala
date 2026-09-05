@@ -1,0 +1,506 @@
+[
+{
+"cat": "Deen words",
+"title": "Bismillāh",
+"ar": "بِسْمِ اللّٰهِ",
+"ur": "بِسْمِ اللّٰہ",
+"en": "in the name of Allāh",
+"act": "before food · before play · before the car",
+"age": "12 m"
+},
+{
+"cat": "Deen words",
+"title": "Alḥamdulillāh",
+"ar": "اَلْحَمْدُ لِلّٰهِ",
+"ur": "اَلْحَمْدُ لِلّٰہ",
+"en": "all praise is for Allāh",
+"act": "after food · after a finished tower · after a sneeze",
+"age": "18 m"
+},
+{
+"cat": "Deen words",
+"title": "Allāhu akbar",
+"ar": "اَللّٰهُ أَكْبَرُ",
+"ur": "اَللّٰہُ اَکْبَر",
+"en": "Allāh is greatest",
+"act": "at anything big: the sea, a plane, your own prayer",
+"age": "15 m"
+},
+{
+"cat": "Deen words",
+"title": "SubḥānAllāh",
+"ar": "سُبْحَانَ اللّٰهِ",
+"ur": "سُبْحَانَ اللّٰہ",
+"en": "glorified is Allāh",
+"act": "at the sky, moon, rain, an animal, a new baby",
+"age": "18 m"
+},
+{
+"cat": "Deen words",
+"title": "Āmīn",
+"ar": "آمِينْ",
+"ur": "آمِین",
+"en": "Allāh, accept it",
+"act": "after every duʿāʾ you say out loud",
+"age": "10 m"
+},
+{
+"cat": "Deen words",
+"title": "Allāh",
+"ar": "اَللّٰهُ",
+"ur": "اَللّٰہ",
+"en": "Allāh — the One",
+"act": "his first dīn word: say 20× facing him, one clap each",
+"age": "7 m"
+},
+{
+"cat": "Deen words",
+"title": "Ummī · Abū",
+"ar": "أُمِّي · أَبِي",
+"ur": "اُمّی · ابو",
+"en": "my mother · my father",
+"act": "praise each other in front of him daily",
+"age": "9 m"
+},
+{
+"cat": "Deen words",
+"title": "Namāz · ṣalāh",
+"ar": "اَلصَّلَاةُ",
+"ur": "نماز",
+"en": "prayer",
+"act": "his own small rug beside yours",
+"age": "11 m"
+},
+{
+"cat": "Deen words",
+"title": "Sajdah",
+"ar": "السَّجْدَةُ",
+"ur": "سجدہ",
+"en": "forehead down",
+"act": "when you go down, rest his forehead once — never force",
+"age": "11 m"
+},
+{
+"cat": "Deen words",
+"title": "Duʿāʾ",
+"ar": "دُعَاء",
+"ur": "دعا · दुआ",
+"en": "asking Allāh",
+"act": "his little hands up, your hands over his",
+"age": "12 m"
+},
+{
+"cat": "Deen words",
+"title": "Adhān",
+"ar": "الْأَذَانُ",
+"ur": "اَذان",
+"en": "the call to prayer",
+"act": "play it soft at Maghrib; him turning = the goal",
+"age": "7 m"
+},
+{
+"cat": "Deen words",
+"title": "Ṣadaqah",
+"ar": "صَدَقَة",
+"ur": "صدقہ · दान",
+"en": "giving for Allāh",
+"act": "the tin box; his hand drops the coin in",
+"age": "14 m"
+},
+{
+"cat": "Deen words",
+"title": "Rozā · ṣawm",
+"ar": "صِيَام",
+"ur": "روزہ · रोज़ा",
+"en": "fasting",
+"act": "the word now, the game-fast at 17 months",
+"age": "15 m"
+},
+{
+"cat": "Deen words",
+"title": "ʿĪd",
+"ar": "عِيدْ",
+"ur": "عید · ईद",
+"en": "our day of joy — only two: Fiṭr and Aḍḥā",
+"act": "new clothes, ghusl, sweets to the neighbours",
+"age": "14 m"
+},
+{
+"cat": "Deen words",
+"title": "Kaʿbah",
+"ar": "الْكَعْبَة",
+"ur": "کعبہ",
+"en": "Allāh's house, in Makkah",
+"act": "blocks/sand model; walk round it 3× saying labbayk",
+"age": "15 m"
+},
+{
+"cat": "Deen words",
+"title": "Qurʾān",
+"ar": "اَلْقُرْآن",
+"ur": "قرآن",
+"en": "the words of Allāh",
+"act": "mushaf on a high shelf; it never goes on the floor",
+"age": "18 m"
+},
+{
+"cat": "Deen words",
+"title": "Jumuʿah",
+"ar": "الْجُمُعَة",
+"ur": "جمعہ",
+"en": "Friday — our weekly ʿīd",
+"act": "thobe + masjid + nails/hair not cut before you return",
+"age": "16 m"
+},
+{
+"cat": "Deen words",
+"title": "Ḥalāl · ḥarām",
+"ar": "حَلَال · حَرَام",
+"ur": "حلال · حرام",
+"en": "allowed · not allowed",
+"act": "say it about food first, and calmly",
+"age": "2 y"
+},
+{
+"cat": "Āyah & sūrah",
+"title": "Sūrah al-ʿAlaq 1–2 (iqraʾ)",
+"ar": "اِقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ ۝ خَلَقَ الْاِنْسَانَ مِنْ عَلَقٍ",
+"ur": "پڑھو اپنے رب کے نام سے جس نے پیدا کیا",
+"en": "Read! In the name of your Lord who created",
+"act": "start of every lesson; the first revealed word was READ",
+"age": "7 m"
+},
+{
+"cat": "Āyah & sūrah",
+"title": "Sūrah al-Fātiḥah 1–2",
+"ar": "اَلْحَمْدُ لِلّٰهِ رَبِّ الْعَالَمِينَ ۝ الرَّحْمٰنِ الرَّحِيمِ",
+"ur": "سب تعریف اللہ کے لیے جو سب کا رب ہے",
+"en": "All praise is for Allāh, Lord of all the worlds, the Most Gracious, the Most Merciful",
+"act": "the sūrah he will say in every rakʿah of his life",
+"age": "12 m"
+},
+{
+"cat": "Āyah & sūrah",
+"title": "Sūrah al-Ikhlāṣ",
+"ar": "قُلْ هُوَ اللّٰهُ اَحَدٌ ۝ اَللّٰهُ الصَّمَدُ ۝ لَمْ يَلِدْ وَلَمْ يُولَدْ ۝ وَلَمْ يَكُنْ لَّهُ كُفُوًا اَحَدٌ",
+"ur": "کہو: وہ اللہ ایک ہے، بے نیاز",
+"en": "Say: He is Allāh, One; He neither begets nor is born",
+"act": "tawḥīd card — tape on his wall, no pictures with it",
+"age": "9 m"
+},
+{
+"cat": "Āyah & sūrah",
+"title": "Sūrah al-Falaq",
+"ar": "قُلْ اَعُوذُ بِرَبِّ الْفَلَقِ",
+"ur": "کہو: میں پناہ لیتا ہوں صبح کے رب کی",
+"en": "Say: I seek refuge with the Lord of the daybreak",
+"act": "recite over him at sleep, then blow lightly in his hands",
+"age": "7 m"
+},
+{
+"cat": "Āyah & sūrah",
+"title": "Sūrah an-Nās",
+"ar": "قُلْ اَعُوذُ بِرَبِّ النَّاسِ",
+"ur": "کہو: میں پناہ لیتا ہوں لوگوں کے رب کی",
+"en": "Say: I seek refuge with the Lord of mankind",
+"act": "al-Falaq + an-Nās + al-Ikhlāṣ = the 3 Qul, every night",
+"age": "7 m"
+},
+{
+"cat": "Āyah & sūrah",
+"title": "Sūrah al-Kawthar",
+"ar": "اِنَّآ اَعْطَيْنٰكَ الْكَوْثَرَ ۝ فَصَلِّ لِرَبِّكَ وَانْحَرْ",
+"ur": "بے شک ہم نے تمہیں کوثر دی",
+"en": "Truly We gave you al-Kawthar; so pray to your Lord and sacrifice",
+"act": "gratitude + the anchor sūrah of ʿĪd al-Aḍḥā",
+"age": "12 m"
+},
+{
+"cat": "Āyah & sūrah",
+"title": "Sūrah al-ʿAṣr",
+"ar": "وَالْعَصْرِ ۝ اِنَّ الْاِنْسَانَ لَفِي خُسْرٍ ۝ اِلَّا الَّذِيْنَ اٰمَنُوا وَعَمِلُوا الصَّالِحَاتِ",
+"ur": "زمانے کی قسم، انسان خسارے میں ہے",
+"en": "By time: mankind is in loss, except those who believe and do good",
+"act": "the whole dīn in three lines; say it when leaving the house",
+"age": "18 m"
+},
+{
+"cat": "Āyah & sūrah",
+"title": "Sūrah an-Naṣr",
+"ar": "اِذَا جَاءَ نَصْرُ اللّٰهِ وَالْفَتْحُ",
+"ur": "جب اللہ کی مدد اور فتح آئے",
+"en": "When the help of Allāh comes and victory — glorify and seek forgiveness",
+"act": "when he wins a game: alḥamdulillāh, not pride",
+"age": "2 y"
+},
+{
+"cat": "Āyah & sūrah",
+"title": "Sūrah al-Māʿūn",
+"ar": "اَرَئَيْتَ الَّذِيْ يُكَذِّبُ بِالدِّيْنِ ۝ فَذٰلِكَ الَّذِيْ يَدُعُّ الْيَتِيمَ",
+"ur": "کیا تم نے اسے دیکھا جو بدلے کو جھٹلاتا ہے",
+"en": "See the one who denies the Reward — he repels the orphan",
+"act": "the sūrah behind the ṣadaqah tin",
+"age": "2 y"
+},
+{
+"cat": "Āyah & sūrah",
+"title": "Sūrah aḍ-Ḍuḥā",
+"ar": "وَالضُّحَىٰ ۝ وَمَا وَدَّعَكَ رَبُّكَ وَمَا قَلَىٰ",
+"ur": "نہ تمہارے رب نے تمہیں چھوڑا اور نہ ناراض ہوا",
+"en": "Your Lord has not forsaken you, nor is He angry",
+"act": "say this to him whenever he is sad — for his whole life",
+"age": "2 y"
+},
+{
+"cat": "Āyah & sūrah",
+"title": "Sūrah ash-Sharḥ",
+"ar": "فَاِنَّ مَعَ الْعُسْرِ يُسْرًا ۝ اِنَّ مَعَ الْعُسْرِ يُسْرًا",
+"ur": "بے شک تنگی کے ساتھ آسانی ہے",
+"en": "With every hardship comes ease — ease comes with it",
+"act": "our family sentence in every difficulty, said twice",
+"age": "2 y"
+},
+{
+"cat": "Āyah & sūrah",
+"title": "Sūrah al-Fīl",
+"ar": "اَلَمْ تَرَ كَيْفَ فَعَلَ رَبُّكَ بِاَصْحَابِ الْفِيْلِ",
+"ur": "کیا تم نے نہیں دیکھا کہ رب نے فوج والوں کے ساتھ کیا کیا",
+"en": "Did you not see what your Lord did to the people of the elephant",
+"act": "the Year of the Elephant = the year of his ﷺ birth → Mawlid card",
+"age": "2 y"
+},
+{
+"cat": "Āyah & sūrah",
+"title": "Āyat al-Kursī",
+"ar": "اَللّٰهُ لَا اِلٰهَ اِلَّا هُوَ الْحَيُّ الْقَيُّومُ",
+"ur": "اللہ کے سوا کوئی معبود نہیں، زندہ، سب کو تھامنے والا",
+"en": "Allāh — none has the right to be worshipped but He, the Ever-Living, the Sustainer",
+"act": "before sleep: the sunnah of a guarded night",
+"age": "2 y"
+},
+{
+"cat": "Āyah & sūrah",
+"title": "The kalimah of tawḥīd",
+"ar": "لَا اِلٰهَ اِلَّا اللّٰهُ مُحَمَّدٌ رَّسُولُ اللّٰهِ",
+"ur": "کلمہ توحید · کلمہ طیبہ",
+"en": "There is no god but Allāh; Muḥammad is the Messenger of Allāh",
+"act": "10× daily in the room; the wall card above his bed",
+"age": "9 m"
+},
+{
+"cat": "Āyah & sūrah",
+"title": "Ṣalāwat on the Prophet ﷺ",
+"ar": "صَلَّى اللّٰهُ عَلَيْهِ وَسَلَّمَ",
+"ur": "درود شریف",
+"en": "May Allāh send peace upon him",
+"act": "say it every time his ﷺ name is mentioned — a reflex of the house",
+"age": "15 m"
+},
+{
+"cat": "Āyah & sūrah",
+"title": "Morning · evening",
+"ar": "اَصْبَحْنَا وَاَصْبَحَ الْمُلْكُ لِلّٰهِ",
+"ur": "ہم صبح میں ہوئے اور بادشاہی اللہ کی ہوئی",
+"en": "We enter the morning and the dominion is Allāh's",
+"act": "at his wake-up and at Maghrib adhkār",
+"age": "18 m"
+},
+{
+"cat": "Asmāʾ al-Ḥusnā",
+"title": "al-Wāḥid",
+"ar": "اَلْوَاحِدُ",
+"ur": "ایک ہونے والا",
+"en": "The One",
+"act": "one sun, one moon, one Allāh — point at the sky",
+"age": "7 m"
+},
+{
+"cat": "Asmāʾ al-Ḥusnā",
+"title": "ar-Raḥmān",
+"ar": "اَلرَّحْمٰنُ",
+"ur": "بڑا مہربان",
+"en": "The Most Merciful",
+"act": "Ummī's lap, cold water on a hot day, the first bite",
+"age": "8 m"
+},
+{
+"cat": "Asmāʾ al-Ḥusnā",
+"title": "ar-Raḥīm",
+"ar": "اَلرَّحِيمُ",
+"ur": "رحم کرنے والا",
+"en": "The Especially Merciful",
+"act": "how gentle he is with the doll and the cat",
+"age": "9 m"
+},
+{
+"cat": "Asmāʾ al-Ḥusnā",
+"title": "al-Khāliq",
+"ar": "اَلْخَالِقُ",
+"ur": "پیداکرنے والا",
+"en": "The Creator",
+"act": "the seed in the cup, his own hand, the ant",
+"age": "15 m"
+},
+{
+"cat": "Asmāʾ al-Ḥusnā",
+"title": "as-Samīʿ",
+"ar": "اَلسَّمِيعُ",
+"ur": "سننے والا",
+"en": "The All-Hearing",
+"act": "so he can whisper duʿāʾ from any room and be heard",
+"age": "18 m"
+},
+{
+"cat": "Asmāʾ al-Ḥusnā",
+"title": "al-Baṣīr",
+"ar": "اَلْبَصِيرُ",
+"ur": "دیکھنے والا",
+"en": "The All-Seeing",
+"act": "under the chair, in the dark: He sees. Comfort, never a threat",
+"age": "2 y"
+},
+{
+"cat": "Asmāʾ al-Ḥusnā",
+"title": "ar-Razzāq",
+"ar": "اَلرَّزَّاقُ",
+"ur": "روزیدینے والا",
+"en": "The Provider",
+"act": "the plate that arrives; the bird that leaves home hungry",
+"age": "2 y"
+},
+{
+"cat": "Asmāʾ al-Ḥusnā",
+"title": "al-Ghaffūr",
+"ar": "اَلْغَفُورُ",
+"ur": "بخشنے والا",
+"en": "The Ever-Forgiving",
+"act": "after he breaks a cup: «Allāh is forgiving — now we clean together»",
+"age": "2 y"
+},
+{
+"cat": "Asmāʾ al-Ḥusnā",
+"title": "ash-Shakūr",
+"ar": "اَلشَّكُورُ",
+"ur": "شکر قبول کرنے والا",
+"en": "The Appreciative",
+"act": "his tiny good deed is written down — the name for his birthday month",
+"age": "12 m"
+},
+{
+"cat": "Asmāʾ al-Ḥusnā",
+"title": "al-Ḥafīẓ",
+"ar": "اَلْحَفِيظُ",
+"ur": "حفاظت کرنے والا",
+"en": "The Preserver",
+"act": "our duʿāʾ every evening: Allāh, protect Ḥanzalā",
+"age": "7 m"
+},
+{
+"cat": "Duʿāʾ & aḥādīth",
+"title": "Before eating",
+"ar": "بِسْمِ اللّٰهِ",
+"ur": "بسم اللہ",
+"en": "In Allāh's name",
+"act": "if he forgets: بِسْمِ اللّٰهِ فِيْ أَوَّلِهِ وَآخِرِه",
+"age": "18 m"
+},
+{
+"cat": "Duʿāʾ & aḥādīth",
+"title": "After eating",
+"ar": "اَلْحَمْدُ لِلّٰهِ الَّذِيْ أَطْعَمَنَا وَسَقَانَا وَجَعَلَنَا مُسْلِمِيْنَ",
+"ur": "الحمدللہ جس نے کھلایا اور پلایا",
+"en": "Praise to Allāh who fed us, watered us and made us muslims",
+"act": "you say it 300 times before he says it once",
+"age": "18 m"
+},
+{
+"cat": "Duʿāʾ & aḥādīth",
+"title": "For sleep",
+"ar": "بِاسْمِكَ اللّٰهُمَّ أَمُوْتُ وَاَحْيَا",
+"ur": "تیرے نام سے اے اللہ میں مرتا اور جیتا ہوں",
+"en": "In Your name I die and I live",
+"act": "with the 3 Qul over him, blow lightly",
+"age": "12 m"
+},
+{
+"cat": "Duʿāʾ & aḥādīth",
+"title": "On waking",
+"ar": "اَلْحَمْدُ لِلّٰهِ الَّذِيْ اَحْيَانَا بَعْدَ مَا اَمَاتَنَا",
+"ur": "الحمدللہ جس نے موت کے بعد جلا یا",
+"en": "Praise to Allāh who gave us life after death",
+"act": "the first sentence he hears in the morning",
+"age": "2 y"
+},
+{
+"cat": "Duʿāʾ & aḥādīth",
+"title": "Protection of a child",
+"ar": "اُعِيذُكِ اللّٰهَ الْكَبِيرِ مِنْ كُلِّ شَيْطَانٍ وَهَامَّةٍ وَمِنْ كُلِّ عَيْنٍ لَامَّةٍ",
+"ur": "اے اللہ! اسے ہر شیطان اور بری نظر سے بچا",
+"en": "I protect you with the perfect words of Allāh from every shayṭān and evil eye",
+"act": "the duʿāʾ of the Prophet ﷺ for al-Ḥasan & al-Ḥusayn — morning & evening, all 52 weeks",
+"age": "7 m · start today"
+},
+{
+"cat": "Duʿāʾ & aḥādīth",
+"title": "Your own duʿāʾ for him",
+"ar": "اَللّٰهُمَّ احْفَظْ حَنْظَلَةَ وَاجْعَلْهُ قُرَّةَ عَيْنٍ لِي",
+"ur": "اے اللہ! حنظلة کو حفاظت میں رکھ اور اسے ہماری آنکھوں کی ٹھنڈک بنا",
+"en": "Allāh, protect Ḥanzalā and make him the coolness of our eyes",
+"act": "before Fajr — the heaviest item in the whole plan",
+"age": "now"
+},
+{
+"cat": "Duʿāʾ & aḥādīth",
+"title": "Entering the house",
+"ar": "بِسْمِ اللّٰهِ وَلَجْنَا وَعَلَى اللّٰهِ تَوَكَّلْنَا",
+"ur": "بسم اللہ کے ساتھ آئے اور اللہ پر بھروسہ کیا",
+"en": "In Allāh's name we enter, and on Allāh we rely",
+"act": "at the door, every entry, for years",
+"age": "3 y"
+},
+{
+"cat": "Duʿāʾ & aḥādīth",
+"title": "Leaving the house",
+"ar": "بِسْمِ اللّٰهِ تَوَكَّلْتُ عَلَى اللّٰهِ",
+"ur": "بسم اللہ، میں نے اللہ پر بھروسہ کیا",
+"en": "In Allāh's name; I rely on Allāh, no power except with Allāh",
+"act": "in the lift, the car, at the masjid gate",
+"age": "3 y"
+},
+{
+"cat": "Duʿāʾ & aḥādīth",
+"title": "For knowledge",
+"ar": "اَللّٰهُمَّ انْفَعْنِي بِمَا عَلَّمْتَنِي وَزِدْنِي عِلْمًا",
+"ur": "اے اللہ! مجھے علم سے نفع دے اور علم بڑھا",
+"en": "Allāh, benefit me by what You taught me; increase my knowledge",
+"act": "before every lesson and every madrasah bag",
+"age": "4 y"
+},
+{
+"cat": "Duʿāʾ & aḥādīth",
+"title": "At thunder · fear",
+"ar": "اَللّٰهُمَّ إِنِّي أَسْأَلُكَ خَيْرَهَا",
+"ur": "اے اللہ! میں تجھ سے اس کی بھلائی مانگتا ہوں",
+"en": "Allāh, I ask You for its good",
+"act": "hold him close and say it — never «go away, don't be scared»",
+"age": "2 y"
+},
+{
+"cat": "Duʿāʾ & aḥādīth",
+"title": "Ḥadīth · no anger",
+"ar": "لَا تَغْضَبْ",
+"ur": "غصہ نہ کرو",
+"en": "Do not be angry",
+"act": "hold his hands, breathe together, then speak",
+"age": "4 y"
+},
+{
+"cat": "Duʿāʾ & aḥādīth",
+"ar": "أُمُّكَ ثُمَّ أُمُّكَ ثُمَّ أُمُّكَ ثُمَّ أَبُوكَ",
+"ur": "تیری ماں، پھر تیری ماں، پھر تیری ماں، پھر تیرا باپ",
+"en": "Your mother, then your mother, then your mother, then your father",
+"act": "kiss Ummī's hand in front of him daily",
+"age": "3 y",
+"title": "Ḥadīth · mother"
+}
+]
