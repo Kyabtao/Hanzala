@@ -6,11 +6,14 @@ Five files, one system. Started 5 September 2026 (age 7 months).
 |---|---|
 | `TOY-AND-STUDY-PLAN.md` | The full plan: toys to buy / skip by age (0–1, 1–2, 2–3, 3–5, 6–10), the Muslim-angle activities for each stage, the avoid-list with reasons, milestone checklists |
 | `WEEKLY-PLAN-YEAR1.md` | **Week-by-week, 52 weeks** (Sep 2026 → Aug 2027): āyah of the week, new words (AR/UR/HI), one activity, one toy, one milestone, with your real Hijri dates (Ramaḍān 8 Feb 27, ʿĪd 9–10 Mar, ʿArafah/ʿĪd al-Aḍḥā 15–16 May, 1 Muharram 6 Jun, ʿĀshūrāʾ 15 Jun, Mawlid 15 Aug 27) |
+| `SHOPPING-LIST.md` | **Products worth buying, age by age** — search terms that work on Meesho/Amazon/any app, price bands, buy-vs-print verdict. Born from the Meesho "6 Books First Words" set; our printable twin beats it: 8 books, 3 languages |
 | `FRIDGE-CHECKLIST.md` | One A4 page for the kitchen — today's tick list + this year's Islamic dates |
 | `printable/tracker.html` | **Printable tick-box tracker**: developmental milestones 7→60 months, dīn & adab chart, Juz ʿAmma ḥifẓ table + revision rota, duʿāʾ list, 14-day routine grid, yearly record pages, health log. Ticks save in the browser; print A4 portrait or Save as PDF |
 | `printable/cards.html` | **56 printable flashcards** — āyahs, deen words, duʿāʾ, the 10 Names of Allāh — Arabic + Urdu + English, each with "what to do" and the age to start. Print A4 landscape, 8 per sheet, cut |
+| `printable/books.html` | **📖 8 printable mini-books — "My First Words"** (48 word pages, Arabic + Urdu + English): Animals, Fruits, Colours, Body, Home, Vehicles, Family, My Dīn. The free twin of shop "first words board book" sets. Each book = 2 A4 sheets → cut on dashed lines → stack → staple. Print one book or all 8. From 7 months |
+| `updates/` | **Your notes folder**: drop a dated note (copy `updates/TEMPLATE.md`); it gets applied to the manuals, rebuilt and published. See `updates/README.md` |
 
-Open `printable/index.html` in a browser (or run `python3 -m http.server 8000 --directory printable`) to print both sheets.
+Open `printable/index.html` in a browser (or run `python3 -m http.server 8000 --directory printable`) to print all three sheets.
 
 **One rule that matters more than all of it:** 20 minutes on the floor with him, phone in another room, plus duʿāʾ for him by name before Fajr. Everything else is decoration.
 
