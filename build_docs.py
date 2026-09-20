@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Rebuild the GitHub Pages site in docs/ from the .md files + cards.json.
+"""Rebuild the GitHub Pages site in docs/ from the .md files + cards.json + books.json.
    Usage:  python3 build_docs.py   →  docs/index.html, docs/data.js, docs/cards.js,
-           docs/print/tracker.html, docs/print/cards.html
-   Edit TOY-AND-STUDY-PLAN.md / WEEKLY-PLAN-YEAR1.md / FRIDGE-CHECKLIST.md / cards.json,
-   run this, commit, push → Pages updates.
+           docs/print/tracker.html, docs/print/cards.html, docs/print/books.html
+   Edit TOY-AND-STUDY-PLAN.md / WEEKLY-PLAN-YEAR1.md / FRIDGE-CHECKLIST.md /
+   SHOPPING-LIST.md / cards.json / books.json, run this, commit, push → Pages updates.
 """
 import json, os, re, shutil
 
@@ -69,14 +69,85 @@ def safe(html_text):
     """Never let an embedded string close our script tag."""
     return html_text.replace('</', '<\\/')
 
+
+def esc(s):
+    return s.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+
+
+def gen_books(books):
+    """docs/print/books.html — printable First-Words mini-book collection.
+    Each book = cover + 6 word pages + back page = 8 quarter-pages = 2 A4 sheets.
+    """
+    total_words = sum(len(b['words']) for b in books)
+    chips = ''.join('<button class="chip" data-b="%s">%s %s</button>' % (b['id'], b['emoji'], esc(b['title'].split(' · ')[-1])) for b in books)
+    secs = ''
+    pageno = 0
+    for b in books:
+        pgs = []
+        # cover
+        pgs.append('<div class="pg cover"><div class="c-emoji">%s</div><div class="c-collection">Ḥanzalā — My First Words · My First Books</div>'
+                   '<div class="c-title">%s</div><div class="c-sub">%s</div><div class="c-name">for Ḥanzalā · b. 11 Jan 2026</div></div>'
+                   % (b['emoji'], esc(b['title']), esc(b['sub'])))
+        for w in b['words']:
+            pageno += 1
+            pgs.append('<div class="pg"><div class="emoji">%s</div><div class="ar">%s</div><div class="ur">%s</div>'
+                       '<div class="en">%s</div><div class="say">%s</div><div class="foot"><span>%s</span><span>page %d</span></div></div>'
+                       % (w['emoji'], esc(w['ar']), esc(w['ur']), esc(w['en']), esc(w['say']), esc(b['title']), pageno))
+        pgs.append('<div class="pg back"><div class="b-head">How to read this book</div><ul>'
+                   '<li>Hold him facing the page — his eye on the picture, your voice at his ear.</li>'
+                   '<li>One page a day is enough. Say the word <b>5 times</b> while pointing.</li>'
+                   '<li>Add the sentence: <i>"%s."</i> Then wait — count to five silently.</li>'
+                   '<li>Never quiz. Reading is cuddle-time, not a test.</li>'
+                   '<li>End every book the same way: <span class="ar-inline">اَلْحَمْدُ لِلّٰهِ</span> — done!</li>'
+                   '</ul><div class="b-foot">%s · %s</div></div>'
+                   % (esc(b['words'][0]['en']), esc(b['title']), esc(b['sub'])))
+        sheets = ''
+        for i in (0, 1):
+            sheets += '<div class="sheet">%s</div>' % ''.join(pgs[i * 4:(i + 1) * 4])
+        secs += ('<section class="book" id="bk-%s"><div class="bhead noprint"><h2>%s %s</h2>'
+                 '<button class="btn" onclick="onlyBook(\'%s\')">🖨 Print just this book</button></div>%s</section>'
+                 % (b['id'], b['emoji'], esc(b['title']), b['id'], sheets))
+    css = read('docs_src/books_print.css')
+    head = ('<!DOCTYPE html>\n<html lang="en"><head><meta charset="utf-8">\n'
+            '<meta name="viewport" content="width=device-width,initial-scale=1">\n'
+            '<title>Ḥanzalā — My First Words · %d printable mini-books</title>\n'
+            '<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">\n'
+            '<style>') % len(books)
+    head += css + '</style></head><body>\n'
+    toolbar = ('<div class="toolbar noprint"><div><h1>📖 Ḥanzalā — My First Words · %d printable mini-books</h1>'
+               '<p class="sub">%d word pages, Arabic + Urdu + English. Each book prints on 2 A4 sheets → cut → staple = a board book like the shop ones, for free.</p></div>'
+               '<div class="tbtns"><button class="btn big" onclick="onlyBook(\'\')">🖨 Print all %d books</button>'
+               '<button class="btn gh" onclick="onlyBook(\'__cover__\')">Print only the covers</button></div></div>\n'
+               '<div class="howto noprint"><b>Make each book in 4 steps:</b> '
+               '① Print the book\'s 2 A4 sheets (plain paper is fine; 160–200 gsm card feels like a real board book). '
+               '② Cut along the <b>dashed lines</b> → 8 quarter-pages. ③ Stack in page order (cover first, "How to read" page last). '
+               '④ Staple the left edge — or glue each quarter onto a cut cereal box before stacking and cover with wide tape = a wipe-clean "board book".</div>\n'
+               '<div class="chips noprint"><button class="chip on" data-b="">All %d books</button>%s</div>\n') % (
+        len(books), total_words, len(books), len(books), chips)
+    js = ('<script>\n'
+          'function onlyBook(id){\n'
+          '  document.body.classList.toggle("coversonly", id==="__cover__");\n'
+          '  var secs=document.querySelectorAll(".book"), one=!!(id&&id!=="__cover__");\n'
+          '  for(var i=0;i<secs.length;i++){secs[i].style.display=(!one||secs[i].id==="bk-"+id)?"":"none";}\n'
+          '  var chips=document.querySelectorAll(".chip");\n'
+          '  for(var j=0;j<chips.length;j++){chips[j].classList.toggle("on",chips[j].getAttribute("data-b")===(id||""));}\n'
+          '  setTimeout(function(){window.print();},60);\n'
+          '}\n</script>\n')
+    page = head + toolbar + secs + '\n' + js + '</body></html>'
+    open(os.path.join(ROOT, 'docs', 'print', 'books.html'), 'w', encoding='utf-8').write(page)
+    shutil.copyfile(os.path.join(ROOT, 'docs', 'print', 'books.html'), os.path.join(ROOT, 'printable', 'books.html'))
+    return total_words
+
 def main():
     cards = json.loads(read('cards.json'))
+    books = json.loads(read('books.json'))
     site = {
         'dob': '2026-01-11',
         'name': 'Ḥanzalā',
         'weeks': md2html(read('WEEKLY-PLAN-YEAR1.md')),
         'plan':  md2html(read('TOY-AND-STUDY-PLAN.md')),
         'fridge': md2html(read('FRIDGE-CHECKLIST.md')),
+        'shop':  md2html(read('SHOPPING-LIST.md')),
     }
     os.makedirs(os.path.join(ROOT, 'docs', 'print'), exist_ok=True)
     open(os.path.join(ROOT, 'docs', 'data.js'), 'w', encoding='utf-8').write(
@@ -110,9 +181,10 @@ def main():
             'say it aloud while doing the action, 5–10× a day, one card per week.</p><div class="grid">\n%s</div></div></body></html>' % (len(cards), body))
     open(os.path.join(ROOT, 'docs', 'print', 'cards.html'), 'w', encoding='utf-8').write(page)
     shutil.copyfile(os.path.join(ROOT, 'docs', 'print', 'cards.html'), os.path.join(ROOT, 'printable', 'cards.html'))
+    words = gen_books(books)
     open(os.path.join(ROOT, 'docs', '.nojekyll'), 'w').write('')
-    print('docs/ rebuilt · cards: %d · data.js: %d KB' % (
-        len(cards), os.path.getsize(os.path.join(ROOT, 'docs', 'data.js')) // 1024))
+    print('docs/ rebuilt · cards: %d · books: %d (%d word pages) · data.js: %d KB' % (
+        len(cards), len(books), words, os.path.getsize(os.path.join(ROOT, 'docs', 'data.js')) // 1024))
 
 if __name__ == '__main__':
     main()

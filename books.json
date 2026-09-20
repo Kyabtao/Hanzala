@@ -1,0 +1,114 @@
+[
+  {
+    "id": "animals",
+    "emoji": "🐱",
+    "title": "al-Ḥayawānāt · Animals",
+    "sub": "Allāh made every one of them",
+    "words": [
+      {"emoji": "🐱", "en": "Cat", "ar": "قِطَّة", "ur": "بِلّی", "say": "Point and say qiṭṭah 5× — then: be gentle, the Prophet ﷺ loved cats", "deen": "kindness to animals is a good deed"},
+      {"emoji": "🐄", "en": "Cow", "ar": "بَقَرَة", "ur": "گائے", "say": "Moo together, then: Allāh made the baqarah — she gives us milk", "deen": "Sūrah al-Baqarah is named after the cow"},
+      {"emoji": "🐑", "en": "Sheep", "ar": "خَرُوف", "ur": "بھیڑ", "say": "Baa like the kharūf — then: we follow the sheep at ʿĪd al-Aḍḥā", "deen": "the sunnah of Uḍḥiyah"},
+      {"emoji": "🐴", "en": "Horse", "ar": "حِصَان", "ur": "گھوڑا", "say": "Clip-clop around the room — horses were loved by the Prophet ﷺ", "deen": "teach your son swimming, archery and riding"},
+      {"emoji": "🐦", "en": "Bird", "ar": "عُصْفُور", "ur": "پرندہ", "say": "Look up: subḥānAllāh! — the birds bow to Allāh too", "deen": "every bird prays to Allāh (al-Anʿām 6:38)"},
+      {"emoji": "🐟", "en": "Fish", "ar": "سَمَكَة", "ur": "مچھلی", "say": "Swim your hand like a samakah — who taught it to swim? Allāh", "deen": "Yūnus ʿalayhi as-salām and the great fish"}
+    ]
+  },
+  {
+    "id": "fruits",
+    "emoji": "🍎",
+    "title": "al-Fawākih · Fruits",
+    "sub": "Bismillāh before every bite",
+    "words": [
+      {"emoji": "🍎", "en": "Apple", "ar": "تُفَّاح", "ur": "سیب", "say": "Say tuffāḥ, take a bite: qurʾīsh— crumple the sound, make it fun", "deen": "fruits are a gift of Jannah"},
+      {"emoji": "🍌", "en": "Banana", "ar": "مَوْز", "ur": "کیلا", "say": "Peel it slowly — say mawz at every piece, alḥamdulillāh after", "deen": "banana trees grow in Jannah (al-Wāqiʿah 56:29)"},
+      {"emoji": "🌴", "en": "Dates", "ar": "تَمْر", "ur": "کھجور", "say": "The sunnah fruit! Odd number, right hand: bismillāh", "deen": "the Prophet ﷺ broke his fast with tamr"},
+      {"emoji": "🍇", "en": "Grapes", "ar": "عِنَب", "ur": "انگور", "say": "One ʿinab for him, one for you — sharing is sunnah", "deen": "rivers of wine in Jannah are compared to grapes"},
+      {"emoji": "🍉", "en": "Watermelon", "ar": "بَطِّيخ", "ur": "تربوز", "say": "Cut, share, say baṭṭīkh — red inside, green outside, subḥānAllāh", "deen": "the Prophet ﷺ ate melon with dates"},
+      {"emoji": "🍊", "en": "Orange", "ar": "بُرْتُقَال", "ur": "سَنترا", "say": "Roll it, smell it, say burtuqāl — then share the segments", "deen": "give sadaqah: one segment for someone else"}
+    ]
+  },
+  {
+    "id": "colours",
+    "emoji": "🎨",
+    "title": "al-Alwān · Colours",
+    "sub": "Find them all in your house",
+    "words": [
+      {"emoji": "🔴", "en": "Red", "ar": "أَحْمَر", "ur": "لال", "say": "Find 3 aḥmar things in the room — a ball, a cushion, his cup", "deen": "the honoured black stone of the Kaʿbah was once bright"},
+      {"emoji": "🟢", "en": "Green", "ar": "أَخْضَر", "ur": "سَبز", "say": "Green is the colour of Jannah — find akhḍar in the park", "deen": "the garments of the people of Jannah are green"},
+      {"emoji": "🟡", "en": "Yellow", "ar": "أَصْفَر", "ur": "پیلا", "say": "Find aṣfar: a banana, the sun, a lemon — say it every time", "deen": "the sun is one of Allāh's signs"},
+      {"emoji": "🔵", "en": "Blue", "ar": "أَزْرَق", "ur": "نیلا", "say": "Point at the sky: the biggest azraq thing Allāh made", "deen": "the sky above is a ceiling Allāh raised"},
+      {"emoji": "⚫", "en": "Black", "ar": "أَسْوَد", "ur": "کالا", "say": "Find aswad: night sky, his shoes, the Kaʿbah's cloth", "deen": "the Kaʿbah wears a black kiswah"},
+      {"emoji": "⚪", "en": "White", "ar": "أَبْيَض", "ur": "سَفید", "say": "Wear abyaḍ on Jumuʿah — find white things at home", "deen": "white clothes are the sunnah of the Prophet ﷺ"}
+    ]
+  },
+  {
+    "id": "body",
+    "emoji": "🧒",
+    "title": "Jismī · My Body",
+    "sub": "Who made it? Allāh!",
+    "words": [
+      {"emoji": "👁️", "en": "Eyes", "ar": "عَيْن", "ur": "آنکھ", "say": "Blink game, then: Allāh made my ʿayn — alḥamdulillāh!", "deen": "close the eyes when the adhāb of the washroom comes"},
+      {"emoji": "👂", "en": "Ear", "ar": "أُذُن", "ur": "کان", "say": "Whisper his name — my udhn hears! — now it hears Qurʾān", "deen": "the ear will be asked what it listened to"},
+      {"emoji": "👃", "en": "Nose", "ar": "أَنْف", "ur": "ناک", "say": "Sniff-sniff! My anf smells the biryani — alḥamdulillāh", "deen": "smell a flower and say subḥānAllāh"},
+      {"emoji": "👄", "en": "Mouth", "ar": "فَم", "ur": "مُنہ", "say": "My fam says bismillāh, says āmīn, says māmā", "deen": "good words are sadaqah"},
+      {"emoji": "✋", "en": "Hand", "ar": "يَد", "ur": "ہاتھ", "say": "High-five the yad! — my hand gives salām, my hand helps", "deen": "the upper hand (the giver) is better"},
+      {"emoji": "🦶", "en": "Foot", "ar": "قَدَم", "ur": "پاؤں", "say": "Stomp-stomp the qadam — one day it will walk to the masjid", "deen": "feet that walk to the masjid are guarded by Allāh"}
+    ]
+  },
+  {
+    "id": "home",
+    "emoji": "🏠",
+    "title": "Baytī · My Home",
+    "sub": "A Muslim's little house",
+    "words": [
+      {"emoji": "🚪", "en": "Door", "ar": "بَاب", "ur": "دَروازہ", "say": "Knock-knock on the bāb — say salām when you enter the room", "deen": "say the duʿāʾ of entering the home"},
+      {"emoji": "🛏️", "en": "Bed", "ar": "سَرِير", "ur": "بستر", "say": "Tuck in, right side, three Qul over him on his sarīr", "deen": "the Prophet's ﷺ bedtime sunnah"},
+      {"emoji": "🥤", "en": "Cup", "ar": "كُوب", "ur": "کپ", "say": "Drink from the kūb in three sips, sitting down", "deen": "drinking sitting down is sunnah"},
+      {"emoji": "🥄", "en": "Spoon", "ar": "مِلْعَقَة", "ur": "چَمچ", "say": "Hold the milʿaqah himself — messy is how he learns", "deen": "eat with the right hand, alḥamdulillāh after"},
+      {"emoji": "🪑", "en": "Chair", "ar": "كُرْسِيّ", "ur": "کَررسی", "say": "Sit on the kursīy for story time — 5 minutes a day", "deen": "the Kursīy of Allāh is greater than all the skies"},
+      {"emoji": "🕌", "en": "Prayer mat", "ar": "سَجَّادَة", "ur": "جائے نماز", "say": "His own sajjādah beside yours — he copies your sujūd", "deen": "a child of the masjid before he can walk"}
+    ]
+  },
+  {
+    "id": "vehicles",
+    "emoji": "🚗",
+    "title": "Wasāʾil · Things That Go",
+    "sub": "And the duʿāʾ for riding",
+    "words": [
+      {"emoji": "🚗", "en": "Car", "ar": "سَيَّارَة", "ur": "کار", "say": "Vroom! Say sayyārah — in the car we say the travel duʿāʾ", "deen": "subḥāna lladhī sakhkhara lanā hādhā"},
+      {"emoji": "🚌", "en": "Bus", "ar": "حَافِلَة", "ur": "بس", "say": "The wheels on the ḥāfilah go round — count the people, alḥamdulillāh", "deen": "Allāh carried Nūḥ's people on the ark"},
+      {"emoji": "🚂", "en": "Train", "ar": "قِطَار", "ur": "ریل گاڑی", "say": "Choo-choo! Line up cushions like the qiṭār and ride", "deen": "sulaimān had a procession like none after him"},
+      {"emoji": "✈️", "en": "Plane", "ar": "طَائِرَة", "ur": "ہوائی جَہاز", "say": "Arms out, fly! Who keeps the ṭāʾirah in the sky? Allāh", "deen": "one day, in shāʾ Allāh, flying for ḥajj"},
+      {"emoji": "🚲", "en": "Bicycle", "ar": "دَرَّاجَة", "ur": "سائیکل", "say": "Pedal the darrājah with help — balance, then freedom", "deen": "teach your son to ride and swim"},
+      {"emoji": "🚢", "en": "Ship", "ar": "سَفِينَة", "ur": "کشتی", "say": "Bathtub safīnah! Who floats it? Allāh made the water hold it", "deen": "Nūḥ's ark — the first famous ship"}
+    ]
+  },
+  {
+    "id": "family",
+    "emoji": "👨‍👩‍👦",
+    "title": "ʿĀʾilatī · My Family",
+    "sub": "My first ummah",
+    "words": [
+      {"emoji": "👩", "en": "Mother", "ar": "أُمّ", "ur": "اَمّی", "say": "Point to Ummī — kiss her hand, Jannah is under her feet", "deen": "your mother, your mother, then your father"},
+      {"emoji": "👨", "en": "Father", "ar": "أَب", "ur": "اَبو", "say": "Abī carries me, prays with me — my first imām", "deen": "a father's good upbringing is a gift to his child"},
+      {"emoji": "👶", "en": "Baby", "ar": "طِفْل", "ur": "بچہ", "say": "He is the ṭifl! Be soft with babies — gentleness is sunnah", "deen": "the Prophet ﷺ shortened prayer when a baby cried"},
+      {"emoji": "👵", "en": "Grandmother", "ar": "جَدَّة", "ur": "دادی · نانی", "say": "Video-call Jaddah on Sunday — salām first, always", "deen": "the Prophet ﷺ was raised with the love of a grandmother"},
+      {"emoji": "👴", "en": "Grandfather", "ar": "جَدّ", "ur": "دادا · نانا", "say": "Jadd's lap is a throne — tell him: JazākAllāh", "deen": "honouring elders is from ikhrām of Allāh"},
+      {"emoji": "👦", "en": "Brother", "ar": "أَخ", "ur": "بھائی", "say": "Share one biscuit with your akh — one for you, one for him", "deen": "believers are brothers (al-Ḥujurāt 49:10)"}
+    ]
+  },
+  {
+    "id": "deen",
+    "emoji": "🕌",
+    "title": "Dīnī · My Dīn",
+    "sub": "His first Muslim words",
+    "words": [
+      {"emoji": "🕌", "en": "Masjid", "ar": "مَسْجِد", "ur": "مَسجِد", "say": "The house of Allāh — we whisper inside and love to go", "deen": "take him to the masjid from babyhood"},
+      {"emoji": "📖", "en": "Qurʾān", "ar": "قُرْآن", "ur": "قُرآن", "say": "Kiss it, place it high — Allāh's words to us", "deen": "the best of you learns and teaches Qurʾān"},
+      {"emoji": "🕋", "en": "Kaʿbah", "ar": "كَعْبَة", "ur": "کعبہ", "say": "The black cube in Makkah — we turn to it in every ṣalāh", "deen": "the qiblah of every prayer"},
+      {"emoji": "🧢", "en": "Prayer cap", "ar": "طَاقِيَّة", "ur": "ٹوپی", "say": "His little ṭāqīyah — put it on and stand with Abī", "deen": "like a mini imām beside you"},
+      {"emoji": "📿", "en": "Tasbīḥ", "ar": "مِسْبَحَة", "ur": "تَسبیح", "say": "One bead, one subḥānAllāh — his fingers learn dhikr early", "deen": "dhikr after every ṣalāh, 33 each"},
+      {"emoji": "🌙", "en": "Moon", "ar": "هِلَال", "ur": "چاند", "say": "Find the hilāl at the month's start — new month, new duʿāʾ", "deen": "the moon marks Ramaḍān and the two ʿĪds"}
+    ]
+  }
+]

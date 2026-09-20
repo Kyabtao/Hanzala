@@ -31,6 +31,7 @@ After pushing it once, set **Settings → Pages → Build and deployment → Sou
 | `.../Hanzala/data.js` | JavaScript starting `window.SITE = {` (if this 404s, the folder is wrong) |
 | `.../Hanzala/print/tracker.html` | printable tracker; press **Print / Save as PDF** |
 | `.../Hanzala/print/cards.html` | 56 cards; print **A4 landscape** |
+| `.../Hanzala/print/books.html` | 📖 **8 mini-books**; print **A4 portrait**, cut & staple |
 
 ## If it shows 404
 - **Folder must be `/docs`** — not `/ (root)`. This is the #1 cause.
@@ -39,7 +40,8 @@ After pushing it once, set **Settings → Pages → Build and deployment → Sou
 - No `.nojekyll` needed? It is there — `docs/.nojekyll` exists, so nothing is filtered out.
 
 ## Update the content later
-1. Edit `WEEKLY-PLAN-YEAR1.md`, `TOY-AND-STUDY-PLAN.md`, `FRIDGE-CHECKLIST.md` or `cards.json`
+1. Edit `WEEKLY-PLAN-YEAR1.md`, `TOY-AND-STUDY-PLAN.md`, `FRIDGE-CHECKLIST.md`, `SHOPPING-LIST.md`, `cards.json` or `books.json`
+   (or just drop a dated note into `updates/` and apply it later — see `updates/README.md`)
 2. `python3 build_docs.py`
 3. `git add -A && git commit -m "update plan" && git push origin main` → Pages updates itself (Option A) or Actions updates it (Option B)
 
